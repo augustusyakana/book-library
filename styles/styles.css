@@ -1,0 +1,216 @@
+:root {
+    @import url(https: //coolors.co/436436-261c15-4c6085-00a9a5);
+
+    --header-font: "Grey Qo", cursive;
+    --footer-font: "Ubuntu", sans-serif;
+    --card-title-font: "Bodoni Moda SC", serif;
+    --card-other-font: "Moderustic", sans-serif;
+    --header-footer-color: #261c15;
+    --book-card-background: #436436;
+    --card-text-color: #4c6085;
+    --body-background-color: #00a9a5;
+
+    --btn-color: rgba(15, 132, 228, .6);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 10px;
+    font: 40px;
+    text-align: center;
+
+    background-color: var(--header-footer-color);
+
+    color: white;
+    font-family: var(--header-font);
+}
+
+main {
+    background-color: var(--body-background-color);
+
+    text-align: center;
+
+    padding: 1rem;
+    min-height: 75vh;
+    max-width: auto;
+}
+
+.add-btn {
+    background-color: var(--btn-color);
+    padding: 6px;
+    box-shadow: 0px 5px 10px black;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--card-other-font);
+    width: 40%;
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: var(--header-footer-color);
+}
+
+footer {
+    color: white;
+    font-family: var(--footer-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+}
+
+footer svg {
+    fill: white;
+
+    width: 25px;
+    height: 25px;
+
+    margin-bottom: -5px;
+
+    border-radius: 50%;
+}
+
+footer svg:hover {
+    fill: red;
+    border: 2px solid white;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.book-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgb(39, 38, 38);
+
+    background-color: var(--card-text-color);
+    color: black;
+
+    width: 240px;
+    height: 280px;
+
+    padding: 10px;
+    min-height: fit-content;
+}
+
+.card-title {
+    font-family: var(--card-title-font);
+    font-size: 16px;
+    color: white;
+    text-shadow: 0px 5px 8px rgb(5, 5, 5);
+}
+
+.delete-btn {
+    width: 100%;
+    background-color: red;
+    border: none;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.card-author,
+.page-count,
+.read-status {
+    font-family: var(--card-other-font);
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#modal h1 {
+    font-family: var(--header-font);
+    font-size: 50px;
+
+    margin-top: -1.5rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal form {
+    color: black;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    font-size: 18px;
+
+    font-family: var(--footer-font);
+}
+
+.modal-add-btn {
+    font-family: var(--footer-font);
+}
+
+form label {
+    display: block;
+    text-align: left;
+}
+
+input {
+    width: 400px;
+    overflow: auto;
+    justify-self: right;
+    padding: .5rem;
+}
+
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}
+
+.modal-content {
+    background-color: var(--card-text-color);
+    margin: 15% auto;
+    padding: 1.5rem;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.read-checkbox:checked::before {
+    content: 📕;
+}
+
+.read-checkbox::before {
+    content: 📖;
+}
