@@ -1,6 +1,7 @@
 const cardContainer = document.querySelector('.card-container');
 const addBtn = document.querySelector('.add-btn');
 const bookForm = document.getElementById('modal');
+const form = document.querySelector('form');
 const span = document.getElementsByClassName('close')[0];
 const modalAddBtn = document.querySelector('.modal-add-btn');
 
@@ -22,7 +23,9 @@ modalAddBtn.addEventListener('click', function (event) {
     event.preventDefault;
     bookForm.style.display = 'none';
     cardContainer.innerHTML = '';
+    form.reset();
     displayBooks();
+
 })
 
 addBtn.onclick = function () {
